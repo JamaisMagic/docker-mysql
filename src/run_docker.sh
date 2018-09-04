@@ -16,10 +16,6 @@ elif [ "$1" == "rm" ]; then
     docker-compose -f ./docker-compose.yml rm www_mysql_5
 elif [ "$1" == "static" ]; then
     echo "Deploy static files."
-elif [ "$1" == "fresh" ]; then
-    cp ./init_*.sql ./docker-entrypoint-initdb.d/ &&  \
-    docker-compose -f ./docker-compose.yml up -d www_mysql_5 && \
-    rm ./docker-entrypoint-initdb.d/*.sql
 else
     echo "Unexpected parameter: $1"
 fi

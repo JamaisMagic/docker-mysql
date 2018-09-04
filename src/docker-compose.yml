@@ -12,7 +12,7 @@ services:
       MYSQL_DATABASE: "www_mysql_5"
       MYSQL_USER: "www_mysql_5"
       MYSQL_PASSWORD: "www_mysql_5"
-      MYSQL_ALLOW_EMPTY_PASSWORD: no
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
     volumes:
       - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
       - www_mysql_5_data:/var/lib/mysql
