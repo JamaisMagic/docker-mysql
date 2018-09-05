@@ -2,20 +2,28 @@
 
 
 git pull origin master:master && \
-if [ "$1" == "build" ]; then
-    docker-compose -f ./docker-compose.yml build www_mysql_5
-elif [ "$1" == "up" ]; then
-    docker-compose -f ./docker-compose.yml up -d www_mysql_5
-elif [ "$1" == "recreate" ]; then
-    docker-compose -f ./docker-compose.yml up -d --build --force-recreate www_mysql_5
-elif [ "$1" == "restart" ]; then
-    docker-compose -f ./docker-compose.yml restart www_mysql_5
+if [ "$1" == "up" ]; then
+    docker-compose -p docker_mysql -f ./docker-compose.yml up -d
 elif [ "$1" == "stop" ]; then
-    docker-compose -f ./docker-compose.yml stop www_mysql_5
+    docker-compose -p docker_mysql -f ./docker-compose.yml stop
 elif [ "$1" == "rm" ]; then
-    docker-compose -f ./docker-compose.yml rm www_mysql_5
-elif [ "$1" == "static" ]; then
-    echo "Deploy static files."
+    docker-compose -p docker_mysql -f ./docker-compose.yml rm
+elif [ "$1" == "rmdata" ]; then
+    echo "Do you want to delete all the containers and volumes of this service? It will delete the databases also. (y/n)"
+    while : ; do
+        read answer
+        case $answer in
+            y | Y )
+                docker-compose -p docker_mysql -f ./docker-compose.yml stop && \
+                docker-compose -p docker_mysql -f ./docker-compose.yml rm && \
+                docker volume rm docker_mysql_www_mysql_5_data
+                exit
+                ;;
+            * )
+                exit
+                ;;
+        esac
+    done
 else
     echo "Unexpected parameter: $1"
 fi
