@@ -1,4 +1,4 @@
-# docker_mysql
+# docker-mysql
 Run mysql server in docker container via docker compose.
 
 usage
