@@ -11,3 +11,14 @@ create table if not exists url (
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+create table url_0 like url;
+create table url_1 like url;
+create table url_2 like url;
+create table url_3 like url;
+create table url_4 like url;
+create table url_5 like url;
+create table url_6 like url;
+create table url_7 like url;
+create table url_8 like url;
+create table url_9 like url;
