@@ -11,6 +11,19 @@ create table if not exists www_namie_cc.url (
         PRIMARY KEY (`id`)
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+create table if not exists www_picoluna_com.web_push (
+        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        `uid` varchar(255)  CHARACTER SET utf8 DEFAULT '',
+        `endpoint` varchar(512) CHARACTER SET utf8 NOT NULL,
+        `subscription` json NOT NULL,
+        `ua` varchar(255) CHARACTER SET utf8 DEFAULT '',
+        `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`),
+        KEY (`uid`),
+        KEY (`endpoint`)
+    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 create table www_namie_cc.url_0 like www_namie_cc.url;
 create table www_namie_cc.url_1 like www_namie_cc.url;
 create table www_namie_cc.url_2 like www_namie_cc.url;
@@ -21,3 +34,20 @@ create table www_namie_cc.url_6 like www_namie_cc.url;
 create table www_namie_cc.url_7 like www_namie_cc.url;
 create table www_namie_cc.url_8 like www_namie_cc.url;
 create table www_namie_cc.url_9 like www_namie_cc.url;
+
+create table www_picoluna_com.web_push_0 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_1 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_2 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_3 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_4 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_5 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_6 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_7 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_8 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_9 like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_a like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_b like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_c like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_d like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_e like www_picoluna_com.web_push;
+create table www_picoluna_com.web_push_f like www_picoluna_com.web_push;
