@@ -13,6 +13,17 @@ create table if not exists www_namie_cc.url (
 
 create table if not exists www_picoluna_com.web_push (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        `endpoint` varchar(512) CHARACTER SET utf8 NOT NULL,
+        `subscription` json NOT NULL,
+        `ua` varchar(255) CHARACTER SET utf8 DEFAULT '',
+        `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY (`endpoint`)
+    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+create table if not exists www_picoluna_com.web_push_user (
+        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
         `uid` varchar(255)  CHARACTER SET utf8 DEFAULT '',
         `endpoint` varchar(512) CHARACTER SET utf8 NOT NULL,
         `subscription` json NOT NULL,
@@ -21,7 +32,8 @@ create table if not exists www_picoluna_com.web_push (
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`),
         KEY (`uid`),
-        KEY (`endpoint`)
+        KEY (`endpoint`),
+        CONSTRAINT uid_endpoint UNIQUE (`uid`, `endpoint`)
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 create table www_namie_cc.url_0 like www_namie_cc.url;
