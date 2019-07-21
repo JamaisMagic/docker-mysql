@@ -1,5 +1,6 @@
 create database if not exists www_picoluna_com default character set utf8;
 create database if not exists www_namie_cc default character set utf8;
+create database if not exists explorer_picoluna_com default character set utf8;
 
 create table if not exists www_namie_cc.url (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -34,6 +35,17 @@ create table if not exists www_picoluna_com.web_push_user (
         KEY (`uid`),
         KEY (`endpoint`),
         CONSTRAINT uid_endpoint UNIQUE (`uid`, `endpoint`)
+    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+create table if not exists explorer_picoluna_com.asset_holders (
+        `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        `address` varchar(128) CHARACTER SET utf8 NOT NULL,
+        `quantity` decimal(24,8) DEFAULT 0,
+        `percentage` decimal(5,4) DEFAULT 0,
+        `tag` varchar(128) CHARACTER SET utf8 DEFAULT '',
+        `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        PRIMARY KEY (`id`)
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 create table www_namie_cc.url_0 like www_namie_cc.url;
