@@ -40,13 +40,13 @@ create table if not exists www_picoluna_com.web_push_user (
 create table if not exists explorer_picoluna_com.asset_holders (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
         `address` varchar(128) CHARACTER SET utf8 NOT NULL,
-        `quantity` decimal(24,8) DEFAULT 0,
+        `quantity` decimal(22,8) DEFAULT 0,
         `percentage` decimal(5,4) DEFAULT 0,
         `tag` varchar(128) CHARACTER SET utf8 DEFAULT '',
         `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        PRIMARY KEY (`id`)
-        KEY (`address`),
+        PRIMARY KEY (`id`),
+        KEY (`address`)
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 create table www_namie_cc.url_0 like www_namie_cc.url;
