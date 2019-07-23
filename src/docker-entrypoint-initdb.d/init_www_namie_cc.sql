@@ -46,6 +46,7 @@ create table if not exists explorer_picoluna_com.asset_holders (
         `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)
+        KEY (`address`),
     )ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 create table www_namie_cc.url_0 like www_namie_cc.url;
