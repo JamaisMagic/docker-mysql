@@ -16,9 +16,9 @@ services:
     volumes:
       - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
       - ~/data/data/www_mysql_8_data:/var/lib/mysql
-# networks:
-#   webnet:
-#     name: webnet
-#     driver: bridge
+networks:
+  webnet:
+    name: webnet
+    driver: bridge
 volumes:
   www_mysql_8_data:
