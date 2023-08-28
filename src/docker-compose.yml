@@ -1,24 +1,24 @@
-version: "3.7"
+version: "3.8"
 
 services:
-  www_mysql_5:
-    image: mysql:5.7
-    container_name: www_mysql_5_01
+  www_mysql_8:
+    image: mysql:8.1.0
+    container_name: www_mysql_8_01
     restart: always
     networks:
       - webnet
     environment:
-      MYSQL_ROOT_PASSWORD: "123456"
-      MYSQL_DATABASE: "www_mysql_5"
-      MYSQL_USER: "www_mysql_5"
-      MYSQL_PASSWORD: "www_mysql_5"
+      MYSQL_ROOT_PASSWORD: "www_mysql_8"
+      MYSQL_DATABASE: "www_mysql_8"
+      MYSQL_USER: "www_mysql_8"
+      MYSQL_PASSWORD: "www_mysql_8"
       MYSQL_ALLOW_EMPTY_PASSWORD: "no"
     volumes:
       - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
-      - www_mysql_5_data:/var/lib/mysql
-networks:
-  webnet:
-    name: webnet
-    driver: bridge
+      - ~/data/data/www_mysql_8_data:/var/lib/mysql
+# networks:
+#   webnet:
+#     name: webnet
+#     driver: bridge
 volumes:
-  www_mysql_5_data:
+  www_mysql_8_data:
