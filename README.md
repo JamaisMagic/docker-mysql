@@ -21,8 +21,7 @@ Or modifying the docker-compose.yml to rename your own network.
 ## Create data directory
 
 ```bash
-cd ~/data/data/
-mkdir ./www_mysql_8_data
+mkdir -p ~/data/data/www_mysql_8_data
 ```
 
 ## Start the service.
