@@ -16,7 +16,7 @@ elif [ "$1" == "rmdata" ]; then
             y | Y )
                 docker-compose -p docker_mysql -f ./docker-compose.yml stop && \
                 docker-compose -p docker_mysql -f ./docker-compose.yml rm && \
-                docker volume rm docker_mysql_www_mysql_5_data
+                docker volume rm docker_mysql_www_mysql_8_data
                 exit
                 ;;
             * )

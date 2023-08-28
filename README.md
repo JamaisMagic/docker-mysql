@@ -27,9 +27,9 @@ mkdir -p ~/data/data/www_mysql_8_data
 ## Start the service.
 
 ```bash
-bash ./src/run_docker_dev.sh up # for running.
+bash ./run_docker_dev.sh up # for running.
 
-bash ./src/run_docker_dev.sh stop # for stopping.
+bash ./run_docker_dev.sh stop # for stopping.
 
-bash ./src/run_docker_dev.sh rmdata # for deleting containers, volumes and databases.
+bash ./run_docker_dev.sh rmdata # for deleting containers, volumes and databases.
 ```
