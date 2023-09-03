@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-
 git pull origin master:master && \
 if [ "$1" == "up" ]; then
     docker-compose -p docker_mysql -f ./docker-compose.yml up -d

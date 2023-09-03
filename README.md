@@ -33,3 +33,9 @@ bash ./run_docker_dev.sh stop # for stopping.
 
 bash ./run_docker_dev.sh rmdata # for deleting containers, volumes and databases.
 ```
+
+## Run the following command for client connection. [Checkout the doc.](https://hub.docker.com/_/mysql)
+
+```bash
+docker run -it --network webnet --rm mysql:8.1.0 mysql -h www_mysql_8 -u root -p
+```

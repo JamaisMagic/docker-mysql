@@ -1,6 +1,6 @@
-create database if not exists www_picoluna_com default character set utf8;
-create database if not exists www_namie_cc default character set utf8;
-create database if not exists explorer_picoluna_com default character set utf8;
+create database if not exists www_picoluna_com default character set utf8mb4;
+create database if not exists www_namie_cc default character set utf8mb4;
+create database if not exists explorer_picoluna_com default character set utf8mb4;
 
 create table if not exists www_namie_cc.url (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -10,7 +10,7 @@ create table if not exists www_namie_cc.url (
         `ct` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`)
-    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+    )ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 create table if not exists www_picoluna_com.web_push (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -21,7 +21,7 @@ create table if not exists www_picoluna_com.web_push (
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`),
         UNIQUE KEY (`endpoint`)
-    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+    )ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 create table if not exists www_picoluna_com.web_push_user (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ create table if not exists www_picoluna_com.web_push_user (
         KEY (`uid`),
         KEY (`endpoint`),
         CONSTRAINT uid_endpoint UNIQUE (`uid`, `endpoint`)
-    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+    )ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 create table if not exists explorer_picoluna_com.asset_holders (
         `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -47,7 +47,7 @@ create table if not exists explorer_picoluna_com.asset_holders (
         `ut` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         PRIMARY KEY (`id`),
         KEY (`address`)
-    )ENGINE=INNODB DEFAULT CHARSET=utf8;
+    )ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 create table www_namie_cc.url_0 like www_namie_cc.url;
 create table www_namie_cc.url_1 like www_namie_cc.url;

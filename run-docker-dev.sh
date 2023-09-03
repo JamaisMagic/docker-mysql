@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-
 if [ "$1" == "up" ]; then
     docker-compose -p docker_mysql -f ./docker-compose.yml up -d
 elif [ "$1" == "stop" ]; then
