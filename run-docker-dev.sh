@@ -14,7 +14,8 @@ elif [ "$1" == "rmdata" ]; then
             y | Y )
                 docker-compose -p docker_mysql -f ./docker-compose.yml stop && \
                 docker-compose -p docker_mysql -f ./docker-compose.yml rm && \
-                docker volume rm docker_mysql_www_mysql_8_data
+                docker volume rm docker_mysql_www_mysql_8_data && \
+                echo "You shoud manually delete the folder: ~/data/data/www_mysql_8_data"
                 exit
                 ;;
             * )
